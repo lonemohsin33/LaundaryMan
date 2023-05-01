@@ -1,5 +1,6 @@
-import { Box, Flex, Grid, GridItem, Heading, Wrap, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Button, Flex, Grid, GridItem, Heading, Wrap, useBreakpointValue } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -26,8 +27,11 @@ const Dashboard = () => {
           alignItems={"center"}
           gap={10}
         >
-          <Box>
-            <Heading children="New requests" />
+          <Box display={"flex"} justifyContent={"space-evenly"}>
+            <Link to={"/"}>
+              <Button>Home</Button>
+            </Link>
+            <Heading children="New requests" ml={"4"} />
           </Box>
           <Wrap width={"80%"}>
             <Box borderWidth="1px" borderRadius="lg" overflow="scroll" p="4">
@@ -38,12 +42,12 @@ const Dashboard = () => {
                 <GridItem fontWeight="bold">Address</GridItem>
                 <GridItem fontWeight="bold">Date</GridItem>
                 {data.map((item, index) => (
-                  < >
-                    <GridItem >{item.name}</GridItem>
-                    <GridItem >{item.shirt}</GridItem>
-                    <GridItem >{item.phone}</GridItem>
-                    <GridItem >{item.address}</GridItem>
-                    <GridItem >{item.date}</GridItem>
+                  <>
+                    <GridItem>{item.name}</GridItem>
+                    <GridItem>{item.shirt}</GridItem>
+                    <GridItem>{item.phone}</GridItem>
+                    <GridItem>{item.address}</GridItem>
+                    <GridItem>{item.date}</GridItem>
                   </>
                 ))}
               </Grid>
@@ -52,8 +56,11 @@ const Dashboard = () => {
         </Flex>
       ) : (
         <Flex flexDirection={"column"} alignItems={"center"} gap={10}>
-          <Box>
-            <Heading children="New requests" />
+          <Box display={"flex"} justifyContent={"space-evenly"} alignItems={'center'}>
+            <Link to={"/"}>
+              <Button>Home</Button>
+            </Link>
+            <Heading children="New requests" ml={"4"} />
           </Box>
           <Wrap>
             <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p="4">

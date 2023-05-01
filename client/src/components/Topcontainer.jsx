@@ -148,6 +148,17 @@ const Topcontainer = () => {
                   >
                     Contact Us
                   </Button>
+                  <Link to={'/dashboard'}>
+                    <Button
+                      variant="button"
+                      bg={"#6759FF"}
+                      mr={3}
+                      color={"white"}
+                      onClick={onClose}
+                    >
+                      Dashboard
+                    </Button>
+                  </Link>
                 </DrawerFooter>
               </DrawerContent>
             </Drawer>
@@ -389,12 +400,12 @@ const Topcontainer = () => {
               >
                 Blog
               </Text>
-              <Button bg={"#6759FF"} color={"white"} fontWeight={'light'}>
+              <Button bg={"#6759FF"} color={"white"} fontWeight={"light"}>
                 {" "}
                 Contact Us
               </Button>
-              <Link to={'/dashboard'}>
-                <Button bg={"#6759FF"} color={"white"} fontWeight={'light'}>
+              <Link to={"/dashboard"}>
+                <Button bg={"#6759FF"} color={"white"} fontWeight={"light"}>
                   Dashboard
                 </Button>
               </Link>
@@ -411,7 +422,7 @@ const Topcontainer = () => {
             <Box>
               <Box width={"480px"}>
                 <Heading fontSize={"50px"} fontFamily={"cursive"}>
-                  Get The Best <br/> Laundry Service <br/> At Your{" "}
+                  Get The Best <br /> Laundry Service <br /> At Your{" "}
                   <Box as={"span"} color="#6759FF">
                     Door Step
                   </Box>
