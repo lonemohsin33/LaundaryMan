@@ -400,11 +400,12 @@ const Topcontainer = () => {
             left={"140"}
             top={"260px"}
             justifyContent={"space-between"}
-            position={"absolute"}
+              position={"absolute"}
+             
           >
-            <Box>
-              <Box width={"480px"}>
-                <Heading fontSize={"50px"} fontFamily={"cursive"}>
+            <Box >
+              <Box width={"480px"} >
+                <Heading fontSize={"40px"} fontFamily={"cursive"}>
                   Get The Best Laundry Service At Your{" "}
                   <Box as={"span"} color="#6759FF">
                     Door Step
@@ -435,11 +436,12 @@ const Topcontainer = () => {
               </Box>
             </Box>
             <Box
-              width={"600px"}
+              width={"500px"}
               height={"380px"}
               bg={"white"}
               borderRadius={"2vmax"}
-              p={"4"}
+                p={"4"}
+                border={'1px solid red'}
             >
               <form width={"80%"} onSubmit={handleSubmit}>
                 <Box display={"flex"}>
