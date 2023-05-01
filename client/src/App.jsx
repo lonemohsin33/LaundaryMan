@@ -4,7 +4,7 @@ import './App.css'
 import {Container, Wrap} from "@chakra-ui/react"
 import Topcontainer from './components/Topcontainer'
 import MiddleContainer from './components/MiddleContainer'
-import Dashboard from './components/dashboard'
+import Dashboard from './components/Dashboard'
 import Footer from './components/Footer'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
