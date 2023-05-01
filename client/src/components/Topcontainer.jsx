@@ -389,12 +389,12 @@ const Topcontainer = () => {
               >
                 Blog
               </Text>
-              <Button bg={"#6759FF"} color={"white"}>
+              <Button bg={"#6759FF"} color={"white"} fontWeight={'light'}>
                 {" "}
                 Contact Us
               </Button>
               <Link to={'/dashboard'}>
-                <Button bg={"#6759FF"} color={"white"}>
+                <Button bg={"#6759FF"} color={"white"} fontWeight={'light'}>
                   Dashboard
                 </Button>
               </Link>
@@ -442,7 +442,7 @@ const Topcontainer = () => {
             </Box>
             <Box
               width={"400px"}
-              height={"380px"}
+              height={"340px"}
               bg={"white"}
               borderRadius={"2vmax"}
               p={"4"}
