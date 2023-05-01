@@ -369,12 +369,12 @@ const MiddleContainer = () => {
                   key={index}
                   borderRadius={"1vmax"}
                   bg={item.featureColor}
-                  width={"270px"}
-                  height={"254px"}
+                  width={"220px"}
+                  height={"234px"}
                   display={"flex"}
                   flexDir={"column"}
                   padding={"6"}
-                  gap={6}
+                  gap={4}
                   Text
                   _hover={{
                     cursor: "pointer",
@@ -396,16 +396,16 @@ const MiddleContainer = () => {
 
                   <Heading
                     children={item.featureName}
-                    fontSize={"20px"}
+                    fontSize={"18px"}
                     color={"white"}
                   />
-                  <Text color={"white"} fontSize={"18px"}>
+                  <Text color={"white"} fontSize={"15px"}>
                     {" "}
                     {item.featureContent}
                   </Text>
                   <Text
                     color={"white"}
-                    fontSize={"18px"}
+                    fontSize={"15px"}
                     mt={"3"}
                     Text
                     _hover={{
@@ -491,7 +491,7 @@ const MiddleContainer = () => {
             alignItems={"center"}
             style={{ backgroundColor: "rgba(225, 225, 225, 0.2)" }}
           >
-            <Flex flexDir={"column"}>
+            <Flex flexDir={"column"} ml={'10'}>
               <Text mb={"3"} fontSize={"18px"} color={"#6759FF"}>
                 Choose from different stores
               </Text>
@@ -614,7 +614,7 @@ const MiddleContainer = () => {
               backgroundColor: "rgba(225, 225, 225, 0.2)",
             }}
           >
-            <Flex flexDir={"column"} ml={"120px"} /*mt={"100px"}*/ gap={6}>
+            <Flex flexDir={"column"} ml={"120px"} mt={"50px"} gap={6}>
               <Text
                 children="Design"
                 fontSize={"18px"}
@@ -622,11 +622,11 @@ const MiddleContainer = () => {
                 fontWeight={"semibold"}
                 letterSpacing={"0.16em"}
               />
-              <Heading children="User Friendly App" fontSize={"50px"} />
+              <Heading children="User Friendly App" fontSize={"40px"} />
               <Text
                 width={"600px"}
                 textTransform={"capitalize"}
-                fontWeight={"semibold"}
+                fontWeight={"light"}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.

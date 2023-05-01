@@ -32,6 +32,7 @@ import User from "../assets/icons/User";
 import Phone from "../assets/icons/Phone";
 import Shirt from "../assets/icons/Shirt";
 import Address from "../assets/icons/Address";
+import { Link } from "react-router-dom";
 
 const Topcontainer = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -320,8 +321,8 @@ const Topcontainer = () => {
             </Box>
             <Flex
               fontFamily={"cursive"}
-              fontWeight={"semibold"}
-              fontSize={"18px"}
+              fontWeight={"light"}
+              fontSize={"15px"}
               justifyContent={"space-evenly"}
               width={"60%"}
               height={"8vh"}
@@ -392,10 +393,11 @@ const Topcontainer = () => {
                 {" "}
                 Contact Us
               </Button>
-              <Button bg={"#6759FF"} color={"white"}>
-              
-                Dashboard
-              </Button>
+              <Link to={'/dashboard'}>
+                <Button bg={"#6759FF"} color={"white"}>
+                  Dashboard
+                </Button>
+              </Link>
             </Flex>
           </Box>
           <Flex
@@ -408,7 +410,7 @@ const Topcontainer = () => {
           >
             <Box>
               <Box width={"480px"}>
-                <Heading fontSize={"40px"} fontFamily={"cursive"}>
+                <Heading fontSize={"35px"} fontFamily={"cursive"}>
                   Get The Best Laundry Service At Your{" "}
                   <Box as={"span"} color="#6759FF">
                     Door Step
@@ -418,7 +420,7 @@ const Topcontainer = () => {
               <Box width={"540px"} mt={"6"}>
                 <Heading
                   color={"#010101"}
-                  fontSize={"20px"}
+                  fontSize={"15px"}
                   fontWeight={"light"}
                   fontFamily={"cursive"}
                 >
@@ -439,13 +441,13 @@ const Topcontainer = () => {
               </Box>
             </Box>
             <Box
-              width={"500px"}
+              width={"400px"}
               height={"380px"}
               bg={"white"}
               borderRadius={"2vmax"}
               p={"4"}
             >
-              <form width={"80%"} onSubmit={handleSubmit}>
+              <form width={"70%"} onSubmit={handleSubmit}>
                 <Box display={"flex"}>
                   <InputGroup>
                     <Input
