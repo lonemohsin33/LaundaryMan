@@ -299,7 +299,7 @@ const Footer = () => {
                 justifyContent={"flex-start"}
                 style={{ backgroundColor: "rgba(225, 225, 225, 0.2)" }}
               >
-                <Flex mt={"150px"} ml={"130px"} gap={32}>
+                <Flex mt={"150px"} ml={"130px"} gap={24}>
                   <Flex flexDir={"column"}>
                     <Heading
                       children={"Logo Space"}
