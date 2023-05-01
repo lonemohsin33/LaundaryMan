@@ -502,7 +502,7 @@ const Topcontainer = () => {
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     placeholder="Address"
-                    height={"170px"}
+                    height={"150px"}
                     fontFamily={"cursive"}
                     fontSize={"14px"}
                     color={"#777777"}
@@ -524,7 +524,7 @@ const Topcontainer = () => {
                     bg={" #6759FF"}
                     color={"white"}
                     width={"50%"}
-                    height={"50px"}
+                    height={"40px"}
                     type="submit"
                   >
                     Book Service &rarr;
