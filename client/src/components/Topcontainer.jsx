@@ -435,13 +435,13 @@ const Topcontainer = () => {
               </Box>
             </Box>
             <Box
-              width={"660px"}
+              width={"600px"}
               height={"380px"}
               bg={"white"}
               borderRadius={"2vmax"}
               p={"4"}
             >
-              <form width={"90%"} onSubmit={handleSubmit}>
+              <form width={"80%"} onSubmit={handleSubmit}>
                 <Box display={"flex"}>
                   <InputGroup>
                     <Input

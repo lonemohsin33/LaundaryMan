@@ -378,8 +378,6 @@ const MiddleContainer = () => {
                   Text
                   _hover={{
                     cursor: "pointer",
-                    
-                  
 
                     transform: "scale(1.1)",
                   }}
@@ -545,7 +543,7 @@ const MiddleContainer = () => {
                 ))}
               </Grid>
             </Flex>
-            <Box>
+            <Box width={"45%"}>
               <Image src={mobile} />
             </Box>
           </Flex>
@@ -608,7 +606,7 @@ const MiddleContainer = () => {
           </Flex>
 
           <Box
-            height={"972px"}
+            minHeight={"972px"}
             width={"100%"}
             style={{
               backgroundImage: `url(${mobilesbg})`,
@@ -616,7 +614,7 @@ const MiddleContainer = () => {
               backgroundColor: "rgba(225, 225, 225, 0.2)",
             }}
           >
-            <Flex flexDir={"column"} ml={"120px"} mt={"100px"} gap={6}>
+            <Flex flexDir={"column"} ml={"120px"} /*mt={"100px"}*/ gap={6}>
               <Text
                 children="Design"
                 fontSize={"18px"}

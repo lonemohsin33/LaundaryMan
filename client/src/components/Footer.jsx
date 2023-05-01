@@ -264,7 +264,7 @@ const Footer = () => {
 
                 <Box
                   pos={"absolute"}
-                  width={"1100px"}
+                  width={"900px"}
                   height={"250px"}
                   display={"flex"}
                   justifyContent={"flex-end"}
@@ -293,13 +293,13 @@ const Footer = () => {
             <Box width={"100%"} height={"95vh"}>
               <Box
                 mt={"250px"}
-                height={"576px"}
+                minHeight={"576px"}
                 display={"flex"}
                 flexDirection={"column"}
                 justifyContent={"flex-start"}
                 style={{ backgroundColor: "rgba(225, 225, 225, 0.2)" }}
               >
-                <Flex mt={"180px"} ml={"250px"} gap={32}>
+                <Flex mt={"150px"} ml={"200px"} gap={32}>
                   <Flex flexDir={"column"}>
                     <Heading
                       children={"Logo Space"}
