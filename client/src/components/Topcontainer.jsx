@@ -392,6 +392,10 @@ const Topcontainer = () => {
                 {" "}
                 Contact Us
               </Button>
+              <Button bg={"#6759FF"} color={"white"}>
+              
+                Dashboard
+              </Button>
             </Flex>
           </Box>
           <Flex
@@ -400,11 +404,10 @@ const Topcontainer = () => {
             left={"140"}
             top={"260px"}
             justifyContent={"space-between"}
-              position={"absolute"}
-             
+            position={"absolute"}
           >
-            <Box >
-              <Box width={"480px"} >
+            <Box>
+              <Box width={"480px"}>
                 <Heading fontSize={"40px"} fontFamily={"cursive"}>
                   Get The Best Laundry Service At Your{" "}
                   <Box as={"span"} color="#6759FF">
@@ -440,8 +443,7 @@ const Topcontainer = () => {
               height={"380px"}
               bg={"white"}
               borderRadius={"2vmax"}
-                p={"4"}
-                border={'1px solid red'}
+              p={"4"}
             >
               <form width={"80%"} onSubmit={handleSubmit}>
                 <Box display={"flex"}>
@@ -464,8 +466,8 @@ const Topcontainer = () => {
                     <Input
                       placeholder="Phone Number"
                       mb={"3"}
-                        value={phone}
-                        type="number"
+                      value={phone}
+                      type="number"
                       onChange={(e) => setPhone(e.target.value)}
                       fontFamily={"cursive"}
                       fontSize={"14px"}
