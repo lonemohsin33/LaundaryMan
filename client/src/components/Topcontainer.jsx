@@ -403,8 +403,8 @@ const Topcontainer = () => {
             position={"absolute"}
           >
             <Box>
-              <Box width={"560px"}>
-                <Heading fontSize={"60px"} fontFamily={"cursive"}>
+              <Box width={"480px"}>
+                <Heading fontSize={"50px"} fontFamily={"cursive"}>
                   Get The Best Laundry Service At Your{" "}
                   <Box as={"span"} color="#6759FF">
                     Door Step

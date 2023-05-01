@@ -290,7 +290,7 @@ const Footer = () => {
                 </Box>
               </Wrap>
             </Box>
-            <Box width={"100%"} height={"95vh"}>
+            <Box width={"100%"} minHeight={"650px"}>
               <Box
                 mt={"250px"}
                 minHeight={"576px"}

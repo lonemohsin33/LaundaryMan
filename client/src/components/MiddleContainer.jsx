@@ -606,7 +606,7 @@ const MiddleContainer = () => {
           </Flex>
 
           <Box
-            minHeight={"972px"}
+            minHeight={"100vh"}
             width={"100%"}
             style={{
               backgroundImage: `url(${mobilesbg})`,
