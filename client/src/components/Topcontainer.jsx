@@ -51,7 +51,7 @@ const Topcontainer = () => {
     formData.address = address
     formData.date = new Date().toLocaleString();
     
-    const res = await fetch("http://localhost:3000/submit", {
+    const res = await fetch("https://laundary-epml.onrender.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
