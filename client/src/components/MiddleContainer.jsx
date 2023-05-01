@@ -339,7 +339,7 @@ const MiddleContainer = () => {
           </Box>
         </Wrap>
       ) : (
-        <Wrap height={"430vh"} width={"100%"}>
+        <Wrap height={"530vh"} width={"100%"}>
           <Box
             width={"100%"}
             height={"30vh"}
