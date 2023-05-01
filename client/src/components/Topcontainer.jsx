@@ -410,7 +410,7 @@ const Topcontainer = () => {
           >
             <Box>
               <Box width={"480px"}>
-                <Heading fontSize={"35px"} fontFamily={"cursive"}>
+                <Heading fontSize={"50px"} fontFamily={"cursive"}>
                   Get The Best <br/> Laundry Service <br/> At Your{" "}
                   <Box as={"span"} color="#6759FF">
                     Door Step
@@ -420,7 +420,7 @@ const Topcontainer = () => {
               <Box width={"540px"} mt={"6"}>
                 <Heading
                   color={"#010101"}
-                  fontSize={"15px"}
+                  fontSize={"20px"}
                   fontWeight={"light"}
                   fontFamily={"cursive"}
                 >
@@ -441,7 +441,7 @@ const Topcontainer = () => {
               </Box>
             </Box>
             <Box
-              width={"400px"}
+              width={"500px"}
               height={"340px"}
               bg={"white"}
               borderRadius={"2vmax"}
