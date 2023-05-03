@@ -57,13 +57,16 @@ const Topcontainer = () => {
     formData.date = new Date().toLocaleString();
     formData.location = location;
 
-    const res = await fetch("http://localhost:3000/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const res = await fetch(
+      "https://laundary-man.onrender.com/submit",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
 
     const data = await res.json();
 

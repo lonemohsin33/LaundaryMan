@@ -20,7 +20,7 @@ const Dashboard = () => {
     getData();
   }, []);
   async function getData() {
-    const data = await fetch("http://localhost:3000/dashboard");
+    const data = await fetch("https://laundary-man.onrender.com/dashboard");
     const res = await data.json();
     setData(res.message);
   }
