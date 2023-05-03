@@ -28,7 +28,11 @@ const dataSchema = new mongoose.Schema({
   phone: String,
   shirt: String,
     address: String,
-  date: String
+  date: String,
+  location: {
+    lat: String,
+    long:String,
+  }
 });
 const userSchema = new mongoose.Schema({
     name: String,
@@ -46,7 +50,9 @@ const user = mongoose.model("user", userSchema);
 app.get("/dashboard", async (req, res) => {
     try {
        
-        const data = await Data.find({})
+      const data = await Data.find({})
+
+    
         res.status(200).send({status:true, message:data})
     }
     catch (err) {
@@ -55,9 +61,18 @@ app.get("/dashboard", async (req, res) => {
 });
 
 app.post("/submit", async (req, res) => {
-    try {
+  try {
+      
         
-        const { name, phone, shirt, address ,date} = req.body;
+    const { name, phone, shirt, address, date, } = req.body;
+
+    let location = {}
+    location.lat = req.body.location[0]
+    location.long = req.body.location[1];
+
+    req.body.location= location
+    
+ 
     
         const savedData = await Data.create(req.body)
       res.status(200).send({ status: true, message: savedData })

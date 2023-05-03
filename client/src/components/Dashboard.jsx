@@ -1,23 +1,30 @@
-import { Box, Button, Flex, Grid, GridItem, Heading, Wrap, useBreakpointValue } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Wrap,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import LocationTracker from "./Map";
 
 const Dashboard = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
-    const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
-    useEffect(() => {
-        getData(); 
-    }, [])
-    async function getData() {
-        const data = await fetch(
-          "https://laundary-epml.onrender.com/dashboard"
-        );
-        const res = await data.json()
-        setData(res.message)
-      
-    }
-    
+  useEffect(() => {
+    getData();
+  }, []);
+  async function getData() {
+    const data = await fetch("http://localhost:3000/dashboard");
+    const res = await data.json();
+    setData(res.message);
+  }
+
   return (
     <>
       {isMobile ? (
@@ -35,12 +42,14 @@ const Dashboard = () => {
           </Box>
           <Wrap width={"80%"}>
             <Box borderWidth="1px" borderRadius="lg" overflow="scroll" p="4">
-              <Grid templateColumns="repeat(5, 1fr)" gap="6">
+              <Grid templateColumns="repeat(7, 1fr)" gap="6">
                 <GridItem fontWeight="bold">Name</GridItem>
                 <GridItem fontWeight="bold">Shirt</GridItem>
                 <GridItem fontWeight="bold">Phone</GridItem>
                 <GridItem fontWeight="bold">Address</GridItem>
                 <GridItem fontWeight="bold">Date</GridItem>
+                <GridItem fontWeight="bold">Latitude</GridItem>
+                <GridItem fontWeight="bold">Longitude</GridItem>
                 {data.map((item, index) => (
                   <>
                     <GridItem>{item.name}</GridItem>
@@ -48,6 +57,8 @@ const Dashboard = () => {
                     <GridItem>{item.phone}</GridItem>
                     <GridItem>{item.address}</GridItem>
                     <GridItem>{item.date}</GridItem>
+                    <GridItem>{item?.location?.lat}</GridItem>
+                    <GridItem>{item?.location?.long}</GridItem>
                   </>
                 ))}
               </Grid>
@@ -56,7 +67,11 @@ const Dashboard = () => {
         </Flex>
       ) : (
         <Flex flexDirection={"column"} alignItems={"center"} gap={10}>
-          <Box display={"flex"} justifyContent={"space-evenly"} alignItems={'center'}>
+          <Box
+            display={"flex"}
+            justifyContent={"space-evenly"}
+            alignItems={"center"}
+          >
             <Link to={"/"}>
               <Button>Home</Button>
             </Link>
@@ -64,12 +79,14 @@ const Dashboard = () => {
           </Box>
           <Wrap>
             <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p="4">
-              <Grid templateColumns="repeat(5, 1fr)" gap="6">
+              <Grid templateColumns="repeat(7, 1fr)" gap="4">
                 <GridItem fontWeight="bold">Name</GridItem>
                 <GridItem fontWeight="bold">Shirt</GridItem>
                 <GridItem fontWeight="bold">Phone</GridItem>
                 <GridItem fontWeight="bold">Address</GridItem>
                 <GridItem fontWeight="bold">Date</GridItem>
+                <GridItem fontWeight="bold">Latitude</GridItem>
+                <GridItem fontWeight="bold">Longitude</GridItem>
                 {data.map((item, index) => (
                   <>
                     <GridItem>{item.name}</GridItem>
@@ -77,6 +94,8 @@ const Dashboard = () => {
                     <GridItem>{item.phone}</GridItem>
                     <GridItem>{item.address}</GridItem>
                     <GridItem>{item.date}</GridItem>
+                    <GridItem>{item?.location?.lat}</GridItem>
+                    <GridItem>{item?.location?.long}</GridItem>
                   </>
                 ))}
               </Grid>
@@ -86,6 +105,6 @@ const Dashboard = () => {
       )}
     </>
   );
-}
+};
 
-export default Dashboard
+export default Dashboard;

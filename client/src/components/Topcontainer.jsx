@@ -25,7 +25,7 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import tc1 from "../assets/tc1.svg";
 import vtc1 from "../assets/vtc1.svg";
-
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 import "./tcontainer.css";
 import User from "../assets/icons/User";
@@ -33,42 +33,48 @@ import Phone from "../assets/icons/Phone";
 import Shirt from "../assets/icons/Shirt";
 import Address from "../assets/icons/Address";
 import { Link } from "react-router-dom";
+import Map from "./Map";
 
 const Topcontainer = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-   const [name, setName] = useState("");
-   const [phone, setPhone] = useState("");
-   const [shirt, setShirt] = useState("");
-   const [address, setAddress] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [shirt, setShirt] = useState("");
+  const [address, setAddress] = useState("");
+  const [location, setLocation] = useState(null);
 
+  
   async function handleSubmit(e) {
+    console.log(location);
     e.preventDefault();
-   const formData = {}
-   formData.name= name
-   formData.phone = phone
-   formData.shirt = shirt
-    formData.address = address
+    const formData = {};
+    formData.name = name;
+    formData.phone = phone;
+    formData.shirt = shirt;
+    formData.address = address;
     formData.date = new Date().toLocaleString();
-    
-    const res = await fetch("https://laundary-epml.onrender.com/submit", {
+    formData.location = location;
+
+    const res = await fetch("http://localhost:3000/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     });
-    
-    const data = await res.json()
-   
 
-    setName("")
-    setAddress("")
-    setPhone("")
-    setShirt("")
-  
-}
+    const data = await res.json();
+
+    setName("");
+    setAddress("");
+    setPhone("");
+    setShirt("");
+  }
+  const handleLocationChange = (newLocation) => {
+    setLocation(newLocation);
+  };
 
   return (
     <>
@@ -148,7 +154,7 @@ const Topcontainer = () => {
                   >
                     Contact Us
                   </Button>
-                  <Link to={'/dashboard'}>
+                  <Link to={"/dashboard"}>
                     <Button
                       variant="button"
                       bg={"#6759FF"}
@@ -199,13 +205,15 @@ const Topcontainer = () => {
             </Box>
             <Box
               width={"335px"}
-              height={"446px"}
+              height={"500px"}
               bg={"white"}
               mt={"8"}
+              display={"flex"}
+              flexDirection={"column"}
               borderRadius={"2vmax"}
               p={"4"}
             >
-              <form width={"90%"} onSubmit={handleSubmit}>
+              <form width={"90%"} maxHeight="50%" onSubmit={handleSubmit}>
                 <InputGroup>
                   <Input
                     placeholder="Name"
@@ -258,7 +266,7 @@ const Topcontainer = () => {
                   <Textarea
                     pl={"10"}
                     placeholder="Address"
-                    height={"170px"}
+                    height={"140px"}
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     fontFamily={"cursive"}
@@ -272,6 +280,7 @@ const Topcontainer = () => {
                     children={<Address />}
                   />
                 </InputGroup>
+
                 <Box
                   width={"100%"}
                   display={"flex"}
@@ -289,6 +298,9 @@ const Topcontainer = () => {
                   </Button>
                 </Box>
               </form>
+              <Box height={"20px"}>
+                <Map onLocationChange={handleLocationChange} />
+              </Box>
             </Box>
           </Flex>
         </Wrap>
@@ -452,13 +464,15 @@ const Topcontainer = () => {
               </Box>
             </Box>
             <Box
-              width={"500px"}
+              width={"700px"}
               height={"340px"}
               bg={"white"}
+              display={"flex"}
+              justifyContent={"space-between"}
               borderRadius={"2vmax"}
               p={"4"}
             >
-              <form width={"70%"} onSubmit={handleSubmit}>
+              <form width={"40%"} onSubmit={handleSubmit}>
                 <Box display={"flex"}>
                   <InputGroup>
                     <Input
@@ -492,6 +506,7 @@ const Topcontainer = () => {
                     />
                   </InputGroup>
                 </Box>
+
                 <InputGroup>
                   <Input
                     placeholder="Shirt"
@@ -525,6 +540,7 @@ const Topcontainer = () => {
                     children={<Address />}
                   />
                 </InputGroup>
+
                 <Box
                   width={"100%"}
                   display={"flex"}
@@ -542,6 +558,7 @@ const Topcontainer = () => {
                   </Button>
                 </Box>
               </form>
+              <Map onLocationChange={handleLocationChange} />
             </Box>
           </Flex>
         </Wrap>
